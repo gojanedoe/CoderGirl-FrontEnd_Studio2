@@ -34,8 +34,11 @@ function renderBios(data) {
   //The AstronautBios component should be repeated to display bios for all
   //astronaunts in the returned data object.
 
+  let astronautArr = [];
+  data.forEach((item) => astronautArr.push(AstronautBios(item)));
+
   const root = document.getElementById("root");
-  const container = <div className="container">{AstronautBios(data[0])}</div>;
+  const container = <div className="container">{astronautArr}</div>;
   ReactDOM.render(container, root);
 
   //Then attach to the 'root' div!
